@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uctz4=^(fhr!vj)5dm@)bcsg-$r!9@8nh^qpvn*p(+p*kr3cm^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -129,14 +129,14 @@ WSGI_APPLICATION = 'float.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-        # 'default': {
-        #     'ENGINE': 'django.db.backends.postgresql',
-        #     'NAME': 'float',
-        #     'USER': 'postgres',
-        #     'PASSWORD': '123456',
-        #     'HOST': 'localhost',
-        #     'PORT': '5433',
-        #     }
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'float',
+            'USER': 'postgres',
+            'PASSWORD': '123456',
+            'HOST': 'localhost',
+            'PORT': '5433',
+            }
     }
 
 
