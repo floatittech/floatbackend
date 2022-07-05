@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from email.policy import default
+from decouple import config, Csv
 from pathlib import Path
 import os
 from datetime import timedelta
@@ -21,13 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uctz4=^(fhr!vj)5dm@)bcsg-$r!9@8nh^qpvn*p(+p*kr3cm^'
+SECRET_KEY = config('SECRET_KEY')
+#SECRET_KEY = 'django-insecure-uctz4=^(fhr!vj)5dm@)bcsg-$r!9@8nh^qpvn*p(+p*kr3cm^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='127.0.0.1', cast=Csv())
+#ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
 
 # Application definition
 
