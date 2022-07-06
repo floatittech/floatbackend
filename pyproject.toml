@@ -22,6 +22,7 @@ djangorestframework-simplejwt = "^5.2.0"
 drf-extra-fields = "^3.4.0"
 cryptography = "37.0.1"
 whitenoise = {extras = ["brotli"], version = "^6.2.0"}
+gunicorn = "^20.1.0"
 
 [tool.poetry.dev-dependencies]
 

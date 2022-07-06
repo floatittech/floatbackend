@@ -282,6 +282,20 @@ djangorestframework = ">=3.9.2"
 base64imagefield = ["Pillow (>=6.2.1)"]
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "idna"
 version = "3.3"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -482,7 +496,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "c4b8609ffdb4f903dad7afe6381853fb7bdacac9899a57df70d61c87d49b3fbe"
+content-hash = "316092ed797deb90d9db91e925656b1331247582678edf8154941e9086f8fef3"
 
 [metadata.files]
 asgiref = [
@@ -720,6 +734,10 @@ djangorestframework-simplejwt = [
 drf-extra-fields = [
     {file = "drf-extra-fields-3.4.0.tar.gz", hash = "sha256:6224ae29ddfe80f38e36a1a5f7f1837cec1a4ec90e8960b473d43167f6d427d0"},
     {file = "drf_extra_fields-3.4.0-py3-none-any.whl", hash = "sha256:cc4e35e8b0fbef92a4295dfa5adac1436c0d51402ecc4facadb406e45e24f3bb"},
+]
+gunicorn = [
+    {file = "gunicorn-20.1.0-py3-none-any.whl", hash = "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e"},
+    {file = "gunicorn-20.1.0.tar.gz", hash = "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"},
 ]
 idna = [
     {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
