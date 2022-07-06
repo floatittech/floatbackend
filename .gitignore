@@ -1,4 +1,4 @@
 venv
-float/__pycache__*/*
-floatapp/__pycache__*/*
+float/__pycache__/
+floatapp/__pycache__
 float/.env
