@@ -10,8 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import dj_database_url
-from email.policy import default
-from decouple import config, Csv
+from decouple import config
 from pathlib import Path
 import os
 from datetime import timedelta
