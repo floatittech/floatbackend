@@ -1,3 +1,5 @@
+.venv
+.env
 venv
 float/__pycache__/
 floatapp/__pycache__
