@@ -1,6 +1,6 @@
 from email.policy import default
-import dj_database_url
-from decouple import config
+from dj_database_url import parse as db_url
+from decouple import config, Csv
 from pathlib import Path
 import os
 from datetime import timedelta
@@ -15,10 +15,10 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 ## Allowed Hosts
-ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', cast=Csv())
+# RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+# if RENDER_EXTERNAL_HOSTNAME:
+#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 INSTALLED_APPS = [
@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'float.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': dj_database_url.config('DATABASE_URL', default=config('DATABASE_URL'), conn_max_age=600)
+    'default': config('DATABASE_URL', cast=db_url, conn_max_age=600)
     }
 
 # Password validation
