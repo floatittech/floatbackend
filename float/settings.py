@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'float.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': config('DATABASE_URL', cast=db_url, conn_max_age=600)
+    'default': config('DATABASE_URL', cast=db_url)
     }
 
 # Password validation
