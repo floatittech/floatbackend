@@ -164,7 +164,7 @@ SIMPLE_JWT = {
     'USER_ID_CLAIM': 'user_id',
 }
 #CORS Headers
-CORS_ALLOWED_ORIGINS = [config('CORS_ALLOWED')]
+CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED', cast=Csv())
 
 CORS_EXPOSE_HEADERS = [
     'content-disposition',
